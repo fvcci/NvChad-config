@@ -18,6 +18,7 @@ M.mason = {
     "stylua",
     "ltex-ls",
     "clangd",
+    "clangd-format",
     "pylsp",
     "json-lsp",
     "cmake-language-server",

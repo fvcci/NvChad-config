@@ -25,6 +25,16 @@ local plugins = {
     override_options = overrides.nvimtree,
   },
 
+  ["kevinhwang91/nvim-hlslens"] = {
+    branch = "main",
+    keys = { { "n", "*" }, { "n", "#" }, { "n", "n" }, { "n", "N" } },
+    config = function()
+      require('custom.plugins.configs.hlslens')
+    end,
+  },
+
+  ["907th/vim-auto-save"] = { event = "InsertEnter" },
+
   -- Install a plugin
   -- ["max397574/better-escape.nvim"] = {
   --   event = "InsertEnter",

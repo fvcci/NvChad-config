@@ -20,8 +20,6 @@ api.nvim_create_autocmd("TextYankPost", {
 M.general = {
   i = {
     ["jk"] = { "<ESC>", "Change Keybinding" },
-    -- Enable smart indenting
-    ["{<Enter>"] = { "{<Enter>}<Esc>O" },
   },
 
   n = {
