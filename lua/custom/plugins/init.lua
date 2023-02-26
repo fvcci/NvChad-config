@@ -1,30 +1,29 @@
-local overrides = require "custom.plugins.overrides"
+local overrides = require "custom.plugins.configs.overrides"
 
----@type {[PluginName]: NvPluginConfig|false}
 local plugins = {
+  -- enable dashboard
+  ["goolord/alpha-nvim"] = { disable = false },
 
-  ["goolord/alpha-nvim"] = { disable = false }, -- enables dashboard
+  -- Override plugin definition options
+  ["neovim/nvim-lspconfig"] = {
+    config = function()
+      require "plugins.configs.lspconfig"
+      require "custom.plugins.configs.lspconfig"
+    end,
+  },
 
-  -- -- Override plugin definition options
-  -- ["neovim/nvim-lspconfig"] = {
-  --   config = function()
-  --     require "plugins.configs.lspconfig"
-  --     require "custom.plugins.lspconfig"
-  --   end,
-  -- },
-  --
-  -- -- overrde plugin configs
-  -- ["nvim-treesitter/nvim-treesitter"] = {
-  --   override_options = overrides.treesitter,
-  -- },
-  --
-  -- ["williamboman/mason.nvim"] = {
-  --   override_options = overrides.mason,
-  -- },
-  --
-  -- ["nvim-tree/nvim-tree.lua"] = {
-  --   override_options = overrides.nvimtree,
-  -- },
+  -- overrde plugin configs
+  ["nvim-treesitter/nvim-treesitter"] = {
+    override_options = overrides.treesitter,
+  },
+
+  ["williamboman/mason.nvim"] = {
+    override_options = overrides.mason,
+  },
+
+  ["nvim-tree/nvim-tree.lua"] = {
+    override_options = overrides.nvimtree,
+  },
 
   -- Install a plugin
   -- ["max397574/better-escape.nvim"] = {

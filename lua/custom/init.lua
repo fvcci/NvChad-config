@@ -19,3 +19,5 @@ opt.cc=95                 -- set an 80 column border for good coding style
 opt.cursorline = true     -- highlight current cursorline
 opt.ttyfast = true        -- Speed up scrolling in Vim
 opt.syntax = true         -- syntax highlighting
+
+---------------------------------- plugins ----------------------------------
