@@ -25,7 +25,12 @@ local plugins = {
     override_options = overrides.nvimtree,
   },
 
-  ["kevinhwang91/nvim-hlslens"] = { branch = "main", },
+  ["kevinhwang91/nvim-hlslens"] = {
+    branch = "main",
+    config = function()
+      require("custom.plugins.configs.hlslens")
+    end,
+  },
   ["907th/vim-auto-save"] = { event = "InsertEnter" },
 
   -- Install a plugin
