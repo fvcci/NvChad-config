@@ -1,34 +1,27 @@
-vim.defer_fn(function()
-  pcall(require, "impatient")
-end, 0)
+-- local autocmd = vim.api.nvim_create_autocmd
 
-require "core"
-require "core.options"
+-- Auto resize panes when resizing nvim window
+-- autocmd("VimResized", {
+--   pattern = "*",
+--   command = "tabdo wincmd =",
+-- })
 
--- setup packer + plugins
-local fn = vim.fn
-local install_path = fn.stdpath "data" .. "/site/pack/packer/opt/packer.nvim"
+local opt = vim.opt
+local g = vim.g
 
-if fn.empty(fn.glob(install_path)) > 0 then
-  vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#1e222a" })
-  print "Cloning packer .."
-  fn.system { "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path }
+g.luasnippets_path = "your snippets path"
 
-  -- install plugins + compile their configs
-  vim.cmd "packadd packer.nvim"
-  require "plugins"
-  vim.cmd "PackerSync"
+-- Show line number and relative line number
+opt.number = true
+opt.relativenumber = true
 
-  -- install binaries from mason.nvim & tsparsers
-  vim.api.nvim_create_autocmd("User", {
-    pattern = "PackerComplete",
-    callback = function()
-      vim.cmd "bw | silent! MasonInstallAll" -- close packer window
-      require("packer").loader "nvim-treesitter"
-    end,
-  })
-end
+-- Minimum lines to keep above and below cursor when scrolling
+opt.scrolloff = 3
 
-pcall(require, "custom")
+-- Auto-write the file based on some condition
+opt.autowrite = true
 
-require("core.utils").load_mappings()
+opt.cc = "95"             -- set an 80 column border for good coding style
+opt.cursorline = true     -- highlight current cursorline
+opt.ttyfast = true        -- Speed up scrolling in Vim
+opt.syntax = "on"         -- syntax highlighting

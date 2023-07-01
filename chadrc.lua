@@ -1,16 +1,15 @@
 ---@type ChadrcConfig
 local M = {}
-M.options, M.ui, M.mappings, M.plugins = {}, {}, {}, {}
 
 M.options = {
-   relativenumber = true,
+  number = true,
 }
 
- M.ui = {
-   theme = "chadracula"
- }
+M.ui = {
+  theme = "chadracula"
+}
 
-M.plugins = require "custom.plugins"
+M.plugins = "custom.plugins"
 
 -- check core.mappings for table structure
 M.mappings = require "custom.mappings"
