@@ -40,7 +40,7 @@ local plugins = {
   { "kevinhwang91/nvim-hlslens",
     branch = "main",
     config = function()
-      require("custom.plugins.configs.hlslens")
+      require("custom.configs.hlslens")
     end,
   },
 

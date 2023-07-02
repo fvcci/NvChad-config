@@ -1,17 +1,13 @@
 local M = {}
 
 M.treesitter = {
-  ensure_installed = {
+    ensure_installed = {
     "vim",
     "lua",
-    "html",
-    "css",
     "javascript",
-    "typescript",
-    "tsx",
+    "python",
     "c",
-    "markdown",
-    "markdown_inline",
+    "cpp",
   },
   indent = {
     enable = true,
@@ -23,20 +19,16 @@ M.treesitter = {
 
 M.mason = {
   ensure_installed = {
-    -- lua stuff
-    "lua-language-server",
     "stylua",
-
-    -- web dev stuff
-    "css-lsp",
-    "html-lsp",
-    "typescript-language-server",
-    "deno",
-    "prettier",
-
-    -- c/cpp stuff
+    "ltex-ls",
     "clangd",
-    "clang-format",
+    "clangd-format",
+    "pylsp",
+    "json-lsp",
+    "cmake-language-server",
+    "bash-language-server",
+    "lua-language-server",
+    "vim-language-server",
   },
 }
 
